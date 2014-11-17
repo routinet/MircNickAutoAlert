@@ -1,26 +1,4 @@
 MircNickAutoAlert
 =================
 
-on 1:TEXT:*:*: {
-  if ( ( $me isin $1- ) || ( $target == $me )) {
-    var %inwindow , %inchannel
-    if ( $left( $active , 1) == $chr(35) ) {
-      .set %inchannel 1
-    }
-    else {
-      .set %inchannel 0
-    }
-    if ((( $active == $target ) && ( %inchannel == 1 )) || (( $active == $nick ) && ( $target == $me ))) {
-      .set %inwindow 1
-    }
-    else {
-      .set %inwindow 0
-    }
-    if ( !$appactive ) {
-      .set %inwindow 0
-    }
-    if (( %inwindow == 0 ) && ( $nick != nyss_gitbot )) {
-      .splay beep-beep-beep.wav
-    }
-  }
-}
+Save script.ini into your mirc scripts directory (usually \users\<username>\appdata\roaming\mirc\scripts).  Load through mirc (alt-r).
